@@ -43,6 +43,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-# Example usage:
-# vectorizer = Vectorize()
-# vectorizer.print_vectors()
