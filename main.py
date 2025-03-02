@@ -8,6 +8,8 @@ DATADIR = "data/"
 TRAINING_DATA = "training_data/"
 TRAINING_LABELS = "training_labels/"
 Training_label_file = "training.txt"
+TO_PREDICT_DATA = "predict/"
+
 
 vectorizer = vectorize.Vectorize()
 
@@ -40,23 +42,19 @@ def read_labels(fileName):
         labels = f.read().splitlines()
     return labels
 
-def fit(X_train, y_train):    
-    pass
-
-def predict(X_test):
-    pass
-
+# Prints the results for the data in TO_PREDICT_DATA
 def main():
     X_train = read_data(DATADIR + TRAINING_DATA)
     y_train = read_labels(DATADIR + TRAINING_LABELS + Training_label_file)
-    # print(f"the x is {len(X_train[0])}")
-    # print(f"the y is + {y_train}")
+    desiredPrediction = read_labels(DATADIR + TO_PREDICT_DATA)
+    
     test_data = read_fileData("6.pdf")
     classifier = RandomForestClassifier(n_estimators=100)
     classifier.fit(X_train, y_train)
-    print(classifier.predict(test_data))
-    print(classifier.predict(X_train))
-    # fit(X_train, y_train)  
+    
+    
+    print(classifier.predict(desiredPrediction))
+  
 
 if __name__ == '__main__':
     main()
