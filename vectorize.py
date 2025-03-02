@@ -7,7 +7,7 @@ import nltk
 class Vectorize:
     def __init__(self):
         nltk.download('punkt')
-        # define a list of documents, put your own!
+        # define a list of documents, left generic due to confidentiality
         self.data = ["This is the first document",
                      "This is the second document",
                      "This is the third document",
